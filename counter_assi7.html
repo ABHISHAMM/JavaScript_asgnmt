@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JAVASRIPT ASSI7</title>
+	<script>
+	var x;
+	var repeat=0;
+
+
+function startTimer()
+{
+	if (repeat==0)
+	{
+		x = prompt("Count down starts from :");
+		repeat=1;
+
+	}
+	if (x>=0)
+	{
+		document.getElementById("countdown").innerHTML = x;
+	}
+	x--;
+	if(x<-1)
+	{
+		clearInterval(ticker);
+		alert("Time Expired")
+		x=0;
+		repeat=0;
+	}
+}
+		/*var timeInSecs;
+		var ticker;
+		var x = +prompt("Count down starts from :");
+
+		function startTimer(secs)
+		{
+			timeInSecs = parseInt(secs)-1;
+			ticker = setInterval("tick()",1000);   // every second
+		}
+
+		function tick() 
+		{
+			var secs = timeInSecs;
+			if (secs>0) 
+			{
+				timeInSecs--;
+			}
+			else 
+			{
+				clearInterval(ticker); // stop counting at zero
+				alert("Time Expired")
+				x=0;
+
+		// startTimer from user given;
+			}
+
+		document.getElementById("countdown").innerHTML = secs;
+		}
+
+		startTimer(x+1);*/
+
+	</script>
+	</head>
+	<body>
+	<h1><p id="countdown" style="font-weight: bold; color: red;"></p></h1>
+	<input type="button" value="Starts" onclick="ticker = setInterval(startTimer,1000)">
+
+
+</body>
+</html>
