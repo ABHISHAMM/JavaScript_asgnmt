@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>	age from dob </title>
+	<script>
+
+		function Age()
+		{
+			var bday=parseInt(document.forms["bod"]["day"].value);
+			var bmnth=(parseInt(document.forms["bod"]["mo"].value)-1);
+			var byr=parseInt(document.forms["bod"]["yr"].value);
+			var byr;
+			var age;
+			var now = new Date();
+			tday=now.getDate();
+			tmnth=(now.getMonth());
+			tyr=(now.getFullYear());
+			if((tmnth > bmnth)||(tmnth==bmnth & tday>=bday))
+			{
+				age=byr
+			}
+			else
+			{
+				age=byr+1}
+				alert("Today  :  " + now.getDate() + '/' + (now.getMonth() + 1) + '/'+ now.getFullYear()+' \n'+" you are   "+ (tyr-age)+ "   years old");
+				location.reload();
+			}
+		}
+
+	</script>
+</head>
+<body><br><br>
+	<h1 align="center"><font color="red"><center>DOB with corresponding Age</h1>
+	<form name="bod"><font color="blue"><center>
+		Date :&nbsp; <input type="text" id="day" size="4">
+		&emsp;Month :&nbsp;&nbsp;<input type="text" id="mo" size="4" >
+		&emsp;Year :&nbsp;&nbsp;<input type="text" id="yr" size="4" ></font><br><br><br>
+		<input type="submit" value="submit" onClick="Age()">
+	</form>
+</body>
+</html>
