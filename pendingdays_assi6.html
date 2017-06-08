@@ -2,29 +2,36 @@
 <html>
 <head>
 	<title>JAVASCRIPT ASSI6</title>
-	<h1><font color="blue"><u>Pending days of current year...!</u></font></h1>
+	<h1 align="center"><u>Pending days of current year...!</u></font></h1>
 	<style>
-		h2	
+		h1	
 		{
 			color: red;
+			text-align: center;
 		}
+		
+		
 	</style>
 	<script>
-
-//208 days remaining this year!
-
-
-		today=new Date()
-		var endofyear=new Date(today.getFullYear(),11,31)
-		var one_day=1000*60*60*24
+		
+		function days()
+		{
+			today=new Date()
+			var endofyear=new Date(today.getFullYear(),11,31)
+			var one_day=1000*60*60*24
 
 //Calculate difference btw the two dates, and convert to days
-		document.write("<h2> "+Math.ceil((endofyear.getTime()-today.getTime())/(one_day))+" days remaining this year!</h2>")
+			document.write("<h2>"+Math.ceil((endofyear.getTime()-today.getTime())/(one_day))+" days remaining this year!</h2>")
+		}
+// days remaining this year!
+
 
 	</script>
 </head>
 <body>
-
+<form style="text-align: center;">
+	<input type="button" value="Click Here" onclick="days()">
+</form>
 </body>
 </html>
 

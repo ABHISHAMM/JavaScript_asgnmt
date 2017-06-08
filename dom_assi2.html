@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+    function ageCount() 
+    {
+
+        var date1 = new Date();
+        var dob= document.forms["dobb"]["dob"].value;
+        var date2=new Date(dob);
+        var pattern = /\d{1,2}\/\d{1,2}\/\d{4}$/; //Regex to validate date format (dd/mm/yyyy)
+        if (pattern.test(dob)) 
+        {
+            var y1 = date1.getFullYear(); //getting current year
+            var y2 = date2.getFullYear(); //getting dob year
+            var age = y1 - y2;           //calculating age 
+            alert("Age" +age);
+            return true;
+        } 
+        else 
+        {
+            alert("Invalid date format. Please Input in (mm/dd/yyyy) format!");
+            return false;
+        }
+
+    }
+</script>
+</head>
+<body>
+<form name="dobb" ><h2>DOB with corresponding Age</h2><br><br>
+
+<h3>Date of Birth(mm/dd/yyyy):</h3>
+<input type="text" name="dob" id="dob" />
+<b><input type="submit" value="Age" onclick="ageCount();"></b>
+</form>
+</body>
+</html>

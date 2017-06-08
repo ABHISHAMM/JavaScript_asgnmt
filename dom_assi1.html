@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>JAVASCRIPT ASSI3</title>
     <script>
-    function ageCount() 
-    {
-        var date1 = new Date();
-        var dob= document.getElementById("dob").value;
-        var date2=new Date(dob);
-        var pattern = /\d{1,2}\/\d{1,2}\/\d{4}$/; //Regex to validate date format (dd/mm/yyyy)
-        if (pattern.test(dob)) 
+        function add() 
         {
-            var y1 = date1.getFullYear(); //getting current year
-            var y2 = date2.getFullYear(); //getting dob year
-            var age = y1 - y2;           //calculating age 
-            document.write("Age : " + age);
-            return true;
-        } else 
-        {
-            alert("Invalid date format. Please Input in (dd/mm/yyyy) format!");
-            return false;
-        }
+            var a=parseInt(document.forms["sum"]["num1"].value);
+            var b=parseInt(document.forms["sum"]["num2"].value);
+            var c=a+b;
+            
+                alert("The sum is " +c);
 
-    }
-</script>
+                document.forms["sum"]["num1"].value=null;
+                document.forms["sum"]["num2"].value=null;
+
+       }
+
+    </script>
 </head>
 <body>
-
-Date of Birth(dd/mm/yyyy):
-<input type="text" name="dob" id="dob" />
-<input type="submit" value="Age" onclick="ageCount();">
+    <form name="sum">
+        <h1>ADDITION</h1>
+        Enter first number: &emsp;<input type="text" id="num1" name="num1" value=""><br><br>
+        Enter second number:    <input type="text" id="num2" name="num2" value=""><br><br>   
+        <input type="button" value="sum" onclick="add()">
+    </form>
 </body>
 </html>
