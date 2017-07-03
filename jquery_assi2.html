@@ -1,0 +1,76 @@
+<html>
+<head>
+		<title>NAME AND AGE</title>
+		<style>
+			#tbl_details
+			{
+				margin: auto;
+				margin-top: 120px;
+				
+			}
+			#top
+			{
+				margin-top: 75px;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	<script>			
+		$(document).ready(function(){	
+			$("#button").click(function(){
+				var x = document.getElementById("age").value;
+			    var y = document.getElementById("name").value;
+			    var letters = '/^[a-zA-Z]+$/';
+			    if ((parseInt(x) != (x)) && (y == parseInt(y)))
+			     {
+			        alert("Wrong Value Entered");
+			    }
+			   
+			   
+			     else
+			     {
+			            var rows = "";
+			            var name = document.getElementById("name").value;
+			            var age = document.getElementById("age").value;
+			            rows += "<tr><td>" + name +  "</td><td>" + age + "</td></tr>";
+			           
+			            $('#tbl_details tr:last').after(rows);
+			        } 
+			         document.getElementById("name").value=null;
+         		document.getElementById("age").value=null;
+
+		    });
+
+			$("#delete").click(function(){
+				
+					
+							     alert("are you sure want to delete?");
+							   
+							    $('#tbl_details tr:last').remove();
+							     
+				});
+		});
+	</script>		
+</head>
+<body align='center'>
+	<div id="top">
+		NAME: <input type='text' id="name"><br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;AGE:  <input type='text' id="age"><br><br>
+	    <input type = "button" id = "button" value = " ADD ">
+	</div>	
+		<table id="tbl_details" border="1" cellpadding = "20px" text-align = "center">
+				<thead>
+				  <tr>
+				   	<td>Name </td>
+				   	<td> Age</td>
+				   
+				   </tr>
+				   </thead>
+				   <tbody id='tbl_details_body'>
+
+				   </tbody>
+				</table>
+		<br><br>
+	<input type = "button" id = "delete" value = "DELETE ">
+</body>
+</html>

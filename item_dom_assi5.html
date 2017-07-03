@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>items dom assi5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <script>
+
+   $(document).ready(function(){
+
+                    
+
+                        $('#sbOne').on('change', function() {
+
+                                  var val = $(this).val(),
+                                    text = $(this).find("option:selected").text();
+
+                                  $('#sbTwo').append(new Option(text, val));
+
+                            
+                        });
+                            $("#btn_remove").bind("click", function () {
+                                 $("#sbTwo option:selected").remove();
+                    });          
+            });     
+        
+        /*$(function () { function moveItems(origin, dest) 
+        {
+            $(origin).find(':selected').appendTo(dest);
+        }
+ 
+        function moveAllItems(origin, dest) 
+        {
+            $(origin).children().appendTo(dest);
+        }
+         
+         
+        $('#btn_select').click(function () 
+        {
+            moveItems('#sbOne', '#sbTwo');
+        });
+
+        $("#btn_remove").bind("click", function () {
+                                 
+            $("#sbTwo option:selected").remove();
+                    });      
+        });*/
+    </script>
+
+</head>
+<body>
+    <h2>Move Items From One List to Another</h2>
+    <font color="red">Available Items &emsp;&emsp;&nbsp;&nbsp;Selected Items</font><br>
+    &emsp;<select id="sbOne" multiple="Available_items">
+
+        <option value="1">Blue</option>
+        <option value="2">White</option>
+        <option value="3">Green</option>
+        <option value="4">Red</option>
+        <option value="5">Black</option>
+    </select>
+    &emsp;&emsp;&emsp;&emsp;
+    
+    <select id="sbTwo" multiple="Selected_items">
+        <option value="6">selected list</option>
+    </select>
+ 
+    <br/>
+    <br><br>
+    &emsp;<input type="button" name="submit" value="Submit" id="btn_select">&emsp;&emsp;&emsp;
+    &emsp;&emsp;<input type="button" name="remove" value="Remove" id="btn_remove">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+ 
